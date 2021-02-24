@@ -1,0 +1,211 @@
+.page_content.ons-page-inner {
+  background-color: #5252d4;
+}
+.heading {
+  color: black;
+  font-family: "Anton", sans-serif;
+  font-size: 65px;
+  margin-bottom: 0px;
+}
+.button {
+  font-size: 70px;
+  width: 23%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(15, 2, 73);
+  border-color: #ecf0f1;
+}
+#instructions {
+  font-family: "Bitter", serif;
+  color: #ecf0f1;
+  font-size: 25px;
+}
+.generator {
+  margin-top: 25px;
+}
+.circle {
+  border-color: #ecf0f1;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+  font-size: 60px;
+  padding: 15px;
+  background-color: #ecf0f1;
+  color: black;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  font-family: "Anton", sans-serif;
+}
+.specialCircle {
+  border-color: red;
+  border-style: solid;
+  border-width: thin;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+  font-size: 60px;
+  padding: 15px;
+  background-color: rgba(235, 17, 17, 0.794);
+  color: #ecf0f1;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+}
+
+.ultimateCircle {
+    border-color: gold;
+    border-style: solid;
+    border-width: thin;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px;
+    font-size: 60px;
+    padding: 15px;
+    background-color: gold;
+    color: #ecf0f1;
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    animation: glowing2 1300ms infinite;
+  }
+  @keyframes glowing2 {
+    0% { background-color: rgb(255, 232, 98); box-shadow: 0 0 5px rgb(255, 232, 98); }
+    50% { background-color: gold; box-shadow: 0 0 20px gold; }
+    100% { background-color:rgb(255, 232, 98); box-shadow: 0 0 5px rgb(255, 232, 98); }
+    }
+
+.headType p {
+  margin-top: 0px;
+  color: #ecf0f1;
+  background-color: #e87e04;
+  padding: 5px;
+  text-align: center;
+}
+
+.numbers {
+  margin-top: 20px;
+}
+
+#duo {
+  margin: auto;
+  padding-left: 4.8cm;
+}
+
+#zero {
+  height: 100vh;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 120px;
+  padding-top: 2cm;
+  background-color: white;
+}
+
+#first {
+  margin: auto;
+  width: 50%;
+  margin-bottom: 2cm;
+  height: 100vh;
+  padding-left: 3cm;
+}
+
+body {
+  background-color: #034f84;
+  /* background-color: #ff6f69; */
+}
+
+#second {
+  height: 105vh;
+  background-color: #c83349;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 120px;
+}
+
+#third {
+  height: 100vh;
+  background-color: #6b5b95;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 120px;
+}
+
+#fourth {
+  height: 100vh;
+  background-color: #d64161;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 120px;
+}
+
+#fifth {
+  height: 100vh;
+  background-color:  #77a8a8 ;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 120px;
+}
+
+#sixth {
+  height: 100vh;
+  background-color: #588c7e ;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 120px;
+}
+
+#seventh {
+  height: 100vh;
+  background-color: #92a8d1;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 120px;
+}
+
+#eighth {
+  height: 200vh;
+  background-color: #034f84 ;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 120px;
+}
+
+body {
+  margin: 0;
+}
+
+.circle input[type=number] {
+  width: 100%;
+  border: none;
+  background-color: #ecf0f1;
+  color: black;
+  font-family: "Anton", sans-serif;
+  font-size: 60px;
+  outline-width: 0;
+  padding-left: 0.4cm;
+  border-radius: 50%;
+}
+
+.specialCircle input[type=number] {
+  width: 100%;
+  border: none;
+  background-color:rgba(247, 0, 0, 0);
+  color: white;
+  font-family: "Anton", sans-serif;
+  font-size: 60px;
+  outline-width: 0;
+  padding-left: 0.4cm;
+}
+
+#history_table {
+  border: 2px solid aliceblue;
+  font-size: 40px;
+  margin: 0 auto;
+  color: white;
+  font-family: "Anton", sans-serif;
+}
+

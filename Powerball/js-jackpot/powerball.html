@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lifetime Powerball Tracker<</title>
+    <script src="js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+    <style> 
+      .button {
+      background-color: #c91cb2;
+      -webkit-border-radius: 60px;
+      border-radius: 10px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: inline-block;
+      font-family: 'Anton', sans-serif;
+      font-size: 35px;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      margin-left: 1cm;
+      }
+      .button1 {
+      background-color: #c91cb2;
+      -webkit-border-radius: 60px;
+      border-radius: 10px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: inline-block;
+      font-family: 'Anton', sans-serif;
+      font-size: 35px;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      margin-left: 1cm;
+      }
+      .button3 {
+      background-color: rgb(16, 137, 76);
+      -webkit-border-radius: 60px;
+      border-radius: 10px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: inline-block;  
+      font-family: 'Anton', sans-serif;
+      font-size: 35px;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      margin-left: 1cm;
+      }
+      @keyframes glowing {
+      0% { background-color: #c218a5; box-shadow: 0 0 5px #c218a5; }
+      50% { background-color: #ec1cca; box-shadow: 0 0 20px #ec1cca; }
+      100% { background-color:#c218a5; box-shadow: 0 0 5px #c218a5; }
+      }
+      @keyframes glowing1 {
+      0% { background-color: #ce1919; box-shadow: 0 0 5px #ce1919; }
+      50% { background-color: #ff2626; box-shadow: 0 0 20px #ff2626; }
+      100% { background-color:#ce1919; box-shadow: 0 0 5px #ce1919; }
+      }
+      @keyframes glowing3 {
+      0% { background-color: rgb(16, 137, 76); box-shadow: 0 0 5px rgb(16, 137, 76); }
+      50% { background-color: rgb(27, 208, 117); box-shadow: 0 0 20px rgb(27, 208, 117); }
+      100% { background-color:rgb(16, 137, 76); box-shadow: 0 0 5px rgb(16, 137, 76); }
+      }
+      .button {
+      animation: glowing 1300ms infinite;
+      }
+      .button1 {
+      animation: glowing1 1300ms infinite;
+      }
+      .button3{
+        animation: glowing3 1300ms infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="zero">
+      <img src="assets/Powerball.png" alt="Main">
+    </div>
+    <div id="first">
+    <h1 class="heading" style="color: #ff6f69;">Lifetime Powerball Tracker</h1>
+    <div class="numbers">
+      <div id="duo">
+          <p id="PB1" class="circle">  </p>
+          <p id="PB2" class="circle">  </p>
+      </div>
+      <div id="duo">
+          <p id="PB3" class="circle">  </p>
+          <p id="PB4" class="circle">  </p>
+      </div>
+      <div id="duo">
+          <p id="PB5" class="circle">  </p>
+          <p id="PB6" class="specialCircle">  </p>
+      </div>
+    </div>
+    <div>
+      <span><button onclick="getPBNums()"  class="button" type="button">Lucky Pick</button> <button class="button1" onclick="bet()" type="button">Play</button>
+        <button class="button1" onclick="pp()" type="button">Power Play</button> </span>
+    </div>
+  </div>
+  <div id="second">
+    <br>
+    <h2 class="heading" style="color:white; font-family: 'Poppins', sans-serif; font-size: 75px;">So far you have performed  <a id="clicks">0</a> rolls</h2>
+  </div>
+  <div id="third">
+    <br>
+    <h2 class="heading" style="color:white; font-family: 'Poppins', sans-serif; font-size: 75px;">You have spent $<a id="total">0</a> on Powerball</h2>
+  </div>
+  <div id="fourth">
+    <br>
+    <h2 class="heading" style="color:white; font-family: 'Poppins', sans-serif; font-size: 75px;">Your most rolled number is </h2>
+    <p id="PB7" class="ultimateCircle">  </p>
+  </div>
+  <div id="fifth">
+    <br>
+    <h2 class="heading" style="color:white; font-family: 'Poppins', sans-serif; font-size: 75px;">Set your own numbers </h2>
+    <form>
+      <p id="PB1" class="circle"><input type="number" class="js-number" min="0" max="69" value="0"></p>
+      <p id="PB2" class="circle"><input type="number" class="js-number" min="0" max="69" value="0"></p>
+      <p id="PB3" class="circle"><input type="number" class="js-number" min="0" max="69" value="0"></p>
+      <p id="PB4" class="circle"><input type="number" class="js-number" min="0" max="69" value="0"></p>
+      <p id="PB5" class="circle"><input type="number" class="js-number" min="0" max="69" value="0"></p>
+      <p id="PB6" class="specialCircle"><input type="number" class="js-number" min="0" max="26" value="0"></p>
+    <button class="button1" onclick="bet()" type="button">Bet</button> 
+    <button class="button1" onclick="pp()" type="button">Power Play</button>
+  </form>
+  </div>
+  <div id="sixth">
+    <br>
+    <h2 class="heading" style="color:white; font-family: 'Poppins', sans-serif; font-size: 75px;">Yesterday's Winning Numbers </h2>
+    <div id="winner" style="color:white"></div>
+    <!-- <p id="demo"></p> -->
+    <p id="one" class="circle"></p>
+    <p id="two" class="circle"></p>
+    <p id="three" class="circle"></p>
+    <p id="four" class="circle"></p>
+    <p id="five" class="circle"></p>
+    <p id="six" class="specialCircle"></p>
+<script>
+    $.ajax({
+      url: "https://data.ny.gov/resource/d6yy-54nr.json",
+      type: "GET",
+      data: {
+        "$limit" : 5000,
+        "$$app_token" : "yCWBWc1kZnbK4DKx3tW31fXw8"
+      }
+  }).done(function(data) {
+    console.log(data);
+    appendData(data);
+  });
+
+  function appendData(data) {
+            var mainContainer = document.getElementById("winner");
+            for (var i = 0; i < 1; i++) {
+                var div = document.createElement("div");
+                
+                let numero = data[i].winning_numbers;
+                mainContainer.appendChild(div);
+                let one = numero.slice(0,2);
+                document.getElementById("one").innerHTML = one;
+                let two = numero.slice(3,5);
+                document.getElementById("two").innerHTML = two;
+                let three = numero.slice(6,8);
+                document.getElementById("three").innerHTML = three;
+                let four = numero.slice(9,11);
+                document.getElementById("four").innerHTML = four;
+                let five = numero.slice(12,14);
+                document.getElementById("five").innerHTML = five;
+                let six = numero.slice(15,17);
+                document.getElementById("six").innerHTML = six;
+            }
+        }
+
+</script>
+  <div class="container">
+    <div id="day"></div>
+    <div id="date"></div>
+  </div>
+
+  
+  </div>
+  <div id="seventh">
+    <br>
+    <h2 class="heading" style="color:white; font-family: 'Poppins', sans-serif; font-size: 75px;">You have earned $<label id="earn">0</label> from Powerball</h2>
+      <input type="number" value="0" id="ent" style="height: 1.5cm; font-family: Anton, sans-serif;
+      font-size: 40px; width: 300px;">
+      <input type="submit" onclick="pl()" value="Add Earnings" class="button3">
+  </div>
+  <div id="eighth">
+    <br>
+    <!-- <h2 class="heading" style="color:white; font-family: 'Poppins', sans-serif; font-size: 75px;">View Results History</h2> -->
+    <button id="btn">Next</button>
+    <table id="history_table" class="table table-bordered table-striped table-hover">
+      <caption>View Result History</caption>
+      <thead>
+      <tr>
+        <th>Date</th>
+        <th>Winning Numbers</th>
+        <th>Multiplier</th>
+      </tr>
+    </thead>
+    <tbody id="tdata">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+  </body>
+  <script>
+    $(".js-number").bind('keydown', function(e){
+       var targetValue = $(this).val();
+       if (e.which ===8 || e.which === 13 || e.which === 37 || e.which === 39 || e.which === 46) { return; }
+
+       if (e.which > 47 &&  e.which < 58  && targetValue.length < 2) {
+          var c = String.fromCharCode(e.which);
+          var val = parseInt(c);
+          var textVal = parseInt(targetValue || "0");
+          var result = textVal + val;
+
+          if (result < 0 || result > 99) {
+             e.preventDefault();
+          }
+
+          if (targetValue === "0") {
+            $(this).val(val);
+            e.preventDefault();
+          }
+       }
+       else {
+           e.preventDefault();
+       }
+    });
+
+    $(document).ready(function(){
+    
+    $("#btn").click(function(){
+      $.get("https://data.ny.gov/resource/d6yy-54nr.json",function(data,status){
+        data=JSON.parse(JSON.stringify(data));
+
+        data.forEach(function(dt){
+          $("#tdata").append("<tr>"+"<td>"+dt.draw_date+"</td>"+
+            "<td>"+dt.winning_numbers+"</td>"+
+            "<td>"+dt.multiplier+"</td>"+
+            "</tr>");
+        });
+      });
+    })
+    });
+  
+ </script>
+</html>
